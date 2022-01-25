@@ -13,6 +13,10 @@
 let inputAll = document.querySelectorAll('.input');
 let currencyIn = 'RUB';
 let currencyOut = 'USD';
+let leftText = document.querySelector('.leftText');
+let rightText = document.querySelector('.rightText');
+let exchangeRate;
+let exchangeRateBack;
 
 inputAll.forEach((input) => {
     input.addEventListener('click', (e) => {
@@ -23,7 +27,8 @@ inputAll.forEach((input) => {
         e.target.style.color = '#FFFFFF';
         e.target.style.backgroundColor = '#833AE0'
         currencyIn = e.target.innerText;
-        console.log(currencyIn);
+        // console.log(currencyIn);
+        exchange(currencyIn, currencyOut);
    
     });
 });
@@ -39,37 +44,91 @@ outputAll.forEach((output) => {
         e.target.style.color = '#FFFFFF';
         e.target.style.backgroundColor = '#833AE0'
         currencyOut = e.target.innerText;
-        console.log(currencyOut);
+        // console.log(currencyOut);
+        exchange(currencyIn, currencyOut);
    
     });
 });
 
-switch (currencyIn) {
-    case 'RUB':
-        switch (currencyOut) {
-            case 'RUB':
-                break;
-            case 'USD':
-                fetch('https://api.exchangerate.host/latest?base=RUB&symbols=USD')
-                .then(result => result.json())
-                    .then(data => {
-                        console.log(data.rates.USD)
-                    })  
-        }
+function exchange(currencyIn, currencyOut) {
+    fetch(`https://api.exchangerate.host/latest?base=${currencyIn}&symbols=${currencyOut}`)
+    .then(result => result.json())
+    .then(data => {
+       exchangeRate = JSON.stringify(data.rates).split(':')[1].split('}')[0];
+    //    console.log(exchangeRate);
+        leftText.innerText = `1 ${currencyIn} = ${exchangeRate} ${currencyOut}`;
+        })
+    fetch(`https://api.exchangerate.host/latest?base=${currencyOut}&symbols=${currencyIn}`)
+    .then(result => result.json())
+    .then(data => {
+        exchangeRateBack = JSON.stringify(data.rates).split(':')[1].split('}')[0];
+        rightText.innerText = `1 ${currencyOut} = ${exchangeRateBack} ${currencyIn}`;
+    })
 }
 
-console.log(inputAll);
 
-fetch('https://api.exchangerate.host/latest?base=USD&symbols=RUB')
-.then(result => result.json())
-    .then(data => {
-        console.log(data);
-        console.log(data.rates.RUB)
-    })
+// function exchangeRate(currencyIn, currencyOut) {
 
-fetch(`https://exchangerate.host/latest?base=${currencyIn}&symbols=${currencyOut}`)
-.then(result => result.json())
-    .then(data => {
-        console.log(data);
-        // console.log(data.rates.RUB)
-    })
+// }
+
+// switch (currencyIn) {
+//     case 'RUB':
+//         switch (currencyOut) {
+//             case 'RUB':
+//                 break;
+//             case 'USD':
+//                 fetch('https://api.exchangerate.host/latest?base=RUB&symbols=USD')
+//                 .then(result => result.json())
+//                     .then(data => {
+//                         leftText.innerText = `1 ${currencyIn} = ${data.rates.USD} ${currencyOut}`;
+//                     })
+//                 fetch('https://api.exchangerate.host/latest?base=USD&symbols=RUB')
+//                 .then(result => result.json())
+//                     .then(data => {
+//                         rightText.innerText = `1 ${currencyOut} = ${data.rates.RUB} ${currencyIn}`;
+//                     })
+//                 break;
+//             case 'EUR':   
+//             fetch('https://api.exchangerate.host/latest?base=RUB&symbols=EUR')
+//             .then(result => result.json())
+//                 .then(data => {
+//                     leftText.innerText = `1 ${currencyIn} = ${data.rates.EUR} ${currencyOut}`;
+//                 })
+//             fetch('https://api.exchangerate.host/latest?base=EUR&symbols=RUB')
+//             .then(result => result.json())
+//                 .then(data => {
+//                     rightText.innerText = `1 ${currencyOut} = ${data.rates.RUB} ${currencyIn}`;
+//                 })
+//             break;
+//             case 'GBP':
+//                 fetch('https://api.exchangerate.host/latest?base=RUB&symbols=GBP')
+//                 .then(result => result.json())
+//                     .then(data => {
+//                         leftText.innerText = `1 ${currencyIn} = ${data.rates.GBP} ${currencyOut}`;
+//                     })
+//                 fetch('https://api.exchangerate.host/latest?base=GBP&symbols=RUB')
+//                 .then(result => result.json())
+//                     .then(data => {
+//                         rightText.innerText = `1 ${currencyOut} = ${data.rates.RUB} ${currencyIn}`;
+//                     })
+//                 break;
+//         }
+//         break;
+
+//     case: 'USD'
+// }
+
+// console.log(inputAll);
+
+// fetch('https://api.exchangerate.host/latest?base=USD&symbols=RUB')
+// .then(result => result.json())
+//     .then(data => {
+//         console.log(data.rates.RUB);
+//     })
+
+// fetch(`https://exchangerate.host/latest?base=${currencyIn}&symbols=${currencyOut}`)
+// .then(result => result.json())
+//     .then(data => {
+//         console.log(data);
+//         // console.log(data.rates.RUB)
+//     })
