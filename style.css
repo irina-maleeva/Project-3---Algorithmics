@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header {
+    height: 50px;
+    background: #F5F5F6;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+header div {
+    padding-top: 17px;
+    height: 19px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.06em;
+    color: #959BA4;
+}
+
+.logo {
+    width: 89px;
+    height: 23px;
+    margin-left: 100px;
+    margin-top: 15px;
+    margin-right: 64px;
+}
+.enter {
+    margin-right: 102px;
+    padding: 0;
+    margin-top:9px;
+    margin-bottom: 8px;
+    width: 58px;
+    height: 33px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.06em;
+    background-color: white;
+    color: #000000;
+}
+h1 {
+    width: 587px;
+    height: 32px;
+    margin-left: 253px;
+    margin-top: 56px;  
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px;
+    color: #000000;
+    
+}
+.inputCurrency, .outputCurrency {
+    display: flex;
+    flex-direction:row;
+    
+}
+.wrapper {
+    display: flex;
+    flex-direction:row;
+    margin-top: 33px;
+    margin-left: 253px;
+    width: 348px;
+}
+.inputCurrency div, .outputCurrency div{
+    margin-top: 1px;
+    height: 28px;
+    width: 63.81px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #E5E5E5;
+    box-sizing: border-box;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+    color: #C6C6C6;
+}
+.inputCurrency div:hover, .outputCurrency div:hover {
+    background: #bf9bee;
+    border-radius: 3px 0px 0px 3px;
+    color: #FFFFFF;
+}
+.right{
+    margin-left:123px;
+}
+p {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+
+    color: #9F9F9F;
+}
+.value {
+    width: 259px;
+    height: 102px;
+    border: 1px solid #E5E5E5;
+    box-sizing: border-box;
+    border-radius: 3px;
+    margin-top:20px;
+}
+input, .result {
+    margin: 20px 0 20px 14px;
+    width: 124px;
+    height: 38px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px;
+    color: #000000;
+    border: none;
+}
+.value p {
+    margin-left: 16px;
+}

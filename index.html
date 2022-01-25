@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Трекер задач</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <header>
+        <img class='logo' src=./img/algobank.png alt="банк алгоритмики">
+        <div>БАНК</div>
+        <div>БИЗНЕС</div>
+        <div>ИНВЕСТИЦИИ</div>
+        <div>СТРАХОВАНИЕ</div>
+        <div>МОБАЙЛ</div>
+        <div>ПУТЕШЕСТВИЯ</div>
+        <div>РАЗВЛЕЧЕНИЯ</div>
+        <div class ='enter'>
+            ВОЙТИ
+        </div>    
+    </header>
+    <main>
+        <h1>
+        Конвертер валют онлайн
+        </h1>
+        <div class = 'wrapper'>
+            <div class = 'left'>
+                <p> У меня есть </p>
+                <div class ='inputCurrency'>
+                        <div class ='input'>RUB</div>
+                        <div class ='input'>USD</div>
+                        <div class ='input'>EUR</div>
+                        <div class ='input'>GBP</div>
+                </div>
+                <div class = 'value'>
+                    <input name="sum" type='number'  min ="0" />
+                    <p>1</p>
+                </div>
+
+            </div>
+            <div class = 'right'>
+                <p> Хочу приобрести </p>
+                <div class ='outputCurrency'>
+                    <div class ='output'>RUB</div>
+                    <div class ='output'>USD</div>
+                    <div class ='output'>EUR</div>
+                    <div class ='output'>GBP</div>
+                </div>
+                <div class = 'value'>
+                    <p class ='result'></p>
+                    <p>1</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
