@@ -135,3 +135,7 @@ input, .result {
 .value p {
     margin-left: 16px;
 }
+.inputCurrency div:first-child, .outputCurrency div:nth-child(2){
+    background-color: #833AE0;
+    color: #FFFFFF;
+}
