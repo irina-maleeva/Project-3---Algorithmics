@@ -15,7 +15,7 @@ function exchange(currencyIn, currencyOut) {
     .then(data => {
        exchangeRate = JSON.stringify(data.rates).split(':')[1].split('}')[0];
        calculationResult = (inputSum.value)*exchangeRate;
-       sum.innerText = `${calculationResult}`;
+       sum.innerText = `${calculationResult.toFixed(2)}`;
         leftText.innerText = `1 ${currencyIn} = ${exchangeRate} ${currencyOut}`;
     })
     fetch(`https://api.exchangerate.host/latest?base=${currencyOut}&symbols=${currencyIn}`)
@@ -25,7 +25,7 @@ function exchange(currencyIn, currencyOut) {
         rightText.innerText = `1 ${currencyOut} = ${exchangeRateBack} ${currencyIn}`;
     })
     .catch((error) => {
-        console.log(error);
+        console.error(error);
         alert('Что-то пошло не так');
     })   
 }
