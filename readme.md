@@ -15,6 +15,7 @@ https://www.figma.com/file/jprZt6p7xO6T7oj85woJyi/Converter-m4-part-time?node-id
 
 В левом поле можно ввести сумму для обмена - возможен ввод цифр и точек.
 
+![currency input with dot](https://user-images.githubusercontent.com/92203369/194693528-8ea161df-10d9-47d1-9d97-a3c1f8adb19c.png)
 
 Конвертер отображает курс как меняемой валюты к желаемой, так и желаемой к меняемой.
 
